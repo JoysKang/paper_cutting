@@ -116,7 +116,7 @@ class ExamProcessor:
             print(f"[警告] 学科提示词文件不存在: {subject_prompt_file}")
         
         # 3. 组合提示词
-        combined_prompt = "\n\n".join(prompts)
+        combined_prompt = "\n\n**以上为最近本要求**\n\n".join(prompts)
         print(f"[提示词] 提示词总长度: {len(combined_prompt)} 字符")
         
         return combined_prompt
