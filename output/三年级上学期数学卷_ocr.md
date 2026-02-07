@@ -44,9 +44,9 @@ $$
 
 1. 草药展示台摆着一个正方体形状的草药标本盒，在下面括号内填上三张照片分别是在牛奶盒的哪个方向拍的。（填“前”“上”或“右”）
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_1_1770438421353.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=uakWs4W6vZehbmAaEauMObl8Jx8%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_1_1770441535899.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=QF%2FaxIADVVxzJWZZ9xnzh1Ukr34%3D&Expires=1770527935' alt='OCR图片'/></div>
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_2_1770438421413.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=IGRShf9fVaYcJrrvqpjeDPbKJmg%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_2_1770441535959.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=MGH9DuUWCrmEhd6sq7xcGJQ3pXk%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 <div align="center">
 
@@ -54,9 +54,9 @@ $$
 
 </div>
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_3_1770438421421.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=JxZxMJp6DYFMNzro8tybQalhc8w%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_3_1770441536195.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=0LHV9dADC8%2FWgpE%2FkCkwcvGxzt8%3D&Expires=1770527936' alt='OCR图片'/></div>
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_4_1770438421432.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=pabW8%2FC2VuRptQnhPbDilATu7oA%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_4_1770441536218.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=QlmJHyyogumJR%2FI8u6dcVZplFdE%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 2. 制作香囊时，需要用棉线把布料缝合成袋。每一针缝出的线迹都是直直的、有两个端点的，这种线的数学名称是（    ）。
 
@@ -82,7 +82,7 @@ $$
 
 5. 香囊制作区，每位同学制作1个香囊需要用150克香料，有6名同学参与一共需要（    ）克香料。
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_5_1770438421443.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=rTueO%2FRsiTvDebKYhNP7Q6LJKwE%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_5_1770441536227.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=3kDPhftrioGDYmhR2fpYXN6%2Bkl4%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 6. 活动准备200份中草药知识手册，五年级有95名同学，六年级有108名同学，五、六年级每名同学发一份，剩下的这些手册（    ）（填“够”或“不够”）给5名同学每人一份。
 
@@ -116,7 +116,7 @@ A. 艾草 B. 薄荷 C. 金银花
 
 A.
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_1_1770438421457.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=hOb%2B78sALhvznyD8rnM24NkUs9o%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_1_1770441536235.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=EtZ1gjyL42W24YIr7J%2Bvk4iSTMk%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 <div align="center">
 
@@ -124,7 +124,7 @@ B.
 
 </div>
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_2_1770438421467.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=demjyYh4NPCYVixtV3dKPfr5guU%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_2_1770441536244.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=SJiEAUT%2BKt1QVpO4Sbe5BnMmn2M%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 <div align="center">
 
@@ -132,11 +132,11 @@ C.
 
 </div>
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_3_1770438421473.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=%2FqbQZGGCnVQ%2FIYSPL5Ita8tR5RM%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_3_1770441536323.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=urX4S2Lc34dwCQ8We1nROPh8QHA%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 5. 草药园里有一条笔直的灌溉水管，上面标出了4个连接喷头的节点，这条水管上一共有 （    ）条不同的线段。（图中A、B、C、D代表水管上的4个喷头节点）
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_4_1770438421483.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=bz5s%2FjdiUCoiRH7X7JDk8SVOi7E%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_4_1770441536340.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=W%2BNNMUKjN54FNWALfYneUcCa80c%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 <div align="center">
 
@@ -154,17 +154,17 @@ B. 5
 
 (2) 如图，以给出的一条边和顶点A画一个直角。（2分）
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_5_1770438421494.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=qfGM36z8TQEqnZBaEEta5jO7jlE%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_5_1770441536348.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=%2FV5f71DUy7PrXG4lbs1pv46uwaM%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 2. 在中医药香囊的制作中，需要先在正方形布料上划分出香料填充区域。请你在右边正方形布料上涂出 $ \frac{1}{2} $的区域，作为艾草填充区。（2分）
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_6_1770438421504.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=i9pY8Eg03FG1jodmb2lZKhjKl%2BU%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_6_1770441536358.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=LnGLQpiRGmys7mgVpHETPT0NbbU%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 ## 六、解决问题（31分）
 
 1. 油纸伞是中国传统工艺品之一，李叔叔和王叔叔是做油纸伞的手艺人。李叔叔每个月做8把油纸伞，王叔叔每个月做6把油纸伞，他们做了5个月。李叔叔和王叔叔5个月一共做了多少把油纸伞？（5分）
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_7_1770438421537.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=kThx5u7TnKb7zkHqav%2FuZQuJlxc%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_7_1770441536366.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=MROg57C%2Bxgx1nqZS3eRUptLX5tA%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 2. 养生茶铺正在为“中医药文化体验周”分装养生茶包，每包需要搭配7克枸杞。现在要分装18包，准备120克枸杞够不够？（5分）
 
@@ -184,7 +184,7 @@ $ \textcircled{3} $下午参与研学的人数是上午的3倍少20人。
 
 $ \textcircled{4} $体验“免税科普小课堂”的人数是“免税玩具挑选”和“海南特产选购”人数之和的2倍。
 
-<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207122659816e3ab57c2c460b%2Fcrop_1_1770438421545.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=FzxD6ud4ub1%2FYNp8VXLUoZRjJGQ%3D&Expires=1770524821' alt='OCR图片'/></div>
+<div style='text-align: center;'><img src='https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260207131853d98ef19ec3a54514%2Fcrop_1_1770441536371.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=2Z1pPCzjY892eZEfn7vBh40exBE%3D&Expires=1770527936' alt='OCR图片'/></div>
 
 (1) 要解决“下午有多少名小学生参与研学体验”的问题，用到的信息是（    ）， （填序号）并解答。（3分）
 

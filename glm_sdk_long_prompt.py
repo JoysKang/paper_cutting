@@ -8,6 +8,14 @@
 
 from zai import ZhipuAiClient
 import json
+
+try:
+    from json_repair import repair_json
+    JSON_REPAIR_AVAILABLE = True
+except ImportError:
+    JSON_REPAIR_AVAILABLE = False
+    print("[警告] json_repair 未安装，JSON修复功能不可用。可通过 'pip install json_repair' 安装")
+
 from datetime import datetime
 from pathlib import Path
 from typing import Optional
@@ -21,6 +29,7 @@ API_KEY = "74437791901b4ebe88c2b95d5041d92c.3LgLCf8DudPNJxxr"
 # 小学数学
 # FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/full.jpg"
 FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%AD%A6%E6%9C%9F%E6%95%B0%E5%AD%A6%E5%8D%B7.pdf"
+FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/%E5%85%AD%E5%B9%B4%E7%BA%A7%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B8%9A%E8%B4%A8%E9%87%8F%E6%A3%80%E6%B5%8B%E5%8D%B7%281%29.pdf"
 
 # 小学语文
 # FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E8%AF%AD%E6%96%87/%E4%B8%89%E5%B9%B4%E7%BA%A7%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E8%AF%AD%E6%96%87%281%29.pdf"
@@ -346,7 +355,20 @@ class ExamProcessor:
             return json.loads(result_text)
         except json.JSONDecodeError as e:
             print(f"[错误] JSON解析失败: {e}")
-            print(f"[原始返回] {result_text[:500]}...")
+            print(f"[原始返回-前500字符] {result_text[:500]}...")
+            print(f"[原始返回-后300字符] ...{result_text[-300:]}")
+            
+            # 尝试使用 json_repair 修复
+            if JSON_REPAIR_AVAILABLE:
+                try:
+                    print("[尝试] 使用 json_repair 修复 JSON...")
+                    repaired_text = repair_json(result_text)
+                    repaired_data = json.loads(repaired_text)
+                    print("[成功] JSON 修复成功！")
+                    return repaired_data
+                except Exception as repair_error:
+                    print(f"[失败] JSON 修复失败: {repair_error}")
+            
             return {
                 "error": "JSON解析失败",
                 "error_detail": str(e)
