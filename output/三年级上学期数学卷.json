@@ -17,10 +17,12 @@
       "qs": [
         {
           "no": "1",
-          "prompt": "",
+          "prompt": "口算。",
           "content": "",
-          "type": "口算",
+          "type": "计算",
           "score": "12分",
+          "imgs": [],
+          "opts": [],
           "subqs": [
             {
               "no": "1.1",
@@ -60,15 +62,15 @@
             },
             {
               "no": "1.10",
-              "content": "$ \\frac { 2 } { 9 } + \\frac { 5 } { 9 } = $"
+              "content": "$ \\frac {2}{9} + \\frac {5}{9} = $"
             },
             {
               "no": "1.11",
-              "content": "$ 1 - \\frac { 2 } { 5 } = $"
+              "content": "$ 1 - \\frac {2}{5} = $"
             },
             {
               "no": "1.12",
-              "content": "$ \\frac { 3 } { 7 } + \\frac { 2 } { 7 } = $"
+              "content": "$ \\frac {3}{7} + \\frac {2}{7} = $"
             }
           ]
         }
@@ -82,31 +84,35 @@
       "qs": [
         {
           "no": "1",
-          "prompt": "",
+          "prompt": "列竖式计算（9分）",
           "content": "",
-          "type": "笔算",
+          "type": "计算",
           "score": "9分",
+          "imgs": [],
+          "opts": [],
           "subqs": [
             {
-              "no": "1.1",
+              "no": "2.1",
               "content": "$ 7 0 5 - 2 4 6 = $"
             },
             {
-              "no": "1.2",
+              "no": "2.2",
               "content": "$ 2 3 4 \\times 3 = $"
             },
             {
-              "no": "1.3",
+              "no": "2.3",
               "content": "$ 1 0 7 \\times 4 = $"
             }
           ]
         },
         {
           "no": "2",
-          "prompt": "",
+          "prompt": "脱式计算（9分）",
           "content": "",
-          "type": "脱式计算",
+          "type": "计算",
           "score": "9分",
+          "imgs": [],
+          "opts": [],
           "subqs": [
             {
               "no": "2.1",
@@ -114,7 +120,7 @@
             },
             {
               "no": "2.2",
-              "content": "$ 5 \\times ( 3 1 4 - 1 6 8 ) $"
+              "content": "$ 5 \\times (3 1 4 - 1 6 8) $"
             },
             {
               "no": "2.3",
@@ -137,10 +143,10 @@
           "上\"或\"右\"）": "type\": \"填空",
           "score": "1分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_1_1770513190145.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=jT%2BegGmrFAA%2Fc5oNvZFy8Khejgo%3D&Expires=1770599590",
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_2_1770513190202.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=RgrfG%2BCnOFJXosQMi7A5sFhYono%3D&Expires=1770599590",
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_3_1770513190224.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=9BXOG4epp4MC0gZMJkwr3JNGpH0%3D&Expires=1770599590",
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_4_1770513190236.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=LmTvFuW9pst94d1zWk%2BT%2FfETbg8%3D&Expires=1770599590"
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_1_1770541758583.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=EfPcFyadN%2FomyrOyf8VtlsJaIrg%3D&Expires=1770628158",
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_2_1770541758640.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=yLe8TOU%2FLWDRUb%2By6gUeU20hvLM%3D&Expires=1770628158",
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_3_1770541758648.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=8uEUfvc7aSieQGWriY15IVtN2dQ%3D&Expires=1770628158",
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_4_1770541758654.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=ZJFeD1idDpVB3%2BCctcgdALJMDQY%3D&Expires=1770628158"
           ]
         },
         {
@@ -149,7 +155,9 @@
           "content": "制作香囊时，需要用棉线把布料缝合成袋。每一针缝出的线迹都是直直的、有两个端点的，这种线的数学名称是（    ）。",
           "type": "填空",
           "score": "1分",
-          "imgs": []
+          "imgs": [],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "3",
@@ -157,7 +165,11 @@
           "content": "中医药文化体验周中，同学们在制作草药知识手册。一共准备了64张空白手册页，每8张装订成一本，每个小组领取2本，这些手册页最多能分给（    ）个小组。",
           "type": "填空",
           "score": "1分",
-          "imgs": []
+          "imgs": [
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_3_1770541758648.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=8uEUfvc7aSieQGWriY15IVtN2dQ%3D&Expires=1770628158"
+          ],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "4",
@@ -165,38 +177,40 @@
           "content": "",
           "type": "填空",
           "score": "4分",
+          "imgs": [],
+          "opts": [],
           "subqs": [
             {
-              "no": "4.1",
-              "content": "30分米=（ ）米"
+              "no": "3.1",
+              "content": "30 分米 =（    ）米"
             },
             {
-              "no": "4.2",
-              "content": "5000克=（ ）千克"
+              "no": "3.2",
+              "content": "5000 克 =（    ）千克"
             },
             {
-              "no": "4.3",
-              "content": "4000米=（ ）千米"
+              "no": "3.3",
+              "content": "4000 米 =（    ）千米"
             },
             {
-              "no": "4.4",
-              "content": "60厘米=（ ）分米"
+              "no": "3.4",
+              "content": "60 厘米 =（    ）分米"
             },
             {
-              "no": "4.5",
-              "content": "120毫米=（ ）厘米"
+              "no": "3.5",
+              "content": "120 毫米 =（    ）厘米"
             },
             {
-              "no": "4.6",
-              "content": "2吨=（ ）千克"
+              "no": "3.6",
+              "content": "2 吨 =（    ）千克"
             },
             {
-              "no": "4.7",
-              "content": "350厘米=（ ）米（ ）分米"
+              "no": "3.7",
+              "content": "350 厘米 =（    ）米（    ）分米"
             },
             {
-              "no": "4.8",
-              "content": "4050克=（ ）千克（ ）克"
+              "no": "3.8",
+              "content": "4050 克 =（    ）千克（    ）克"
             }
           ]
         },
@@ -207,16 +221,20 @@
           "type": "填空",
           "score": "1分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_5_1770513190245.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=%2BrvnFEMegxniZSBWze7BHWVTtx4%3D&Expires=1770599590"
-          ]
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_5_1770541758660.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=Y6vgayajJMwOyzuKuCqoY4G1SPY%3D&Expires=1770628158"
+          ],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "6",
           "prompt": "",
-          "content": "活动准备200份中草药知识手册，五年级有95名同学，六年级有108名同学，五、六年级每名同学发一份，剩下的这些手册（    ）（填\"够\"或\"不够\"）给5名同学每人一份。",
+          "content": "活动准备200份中草药知识手册，五年级有95名同学，六年级有108名同学，五、六年级每名同学发一份，剩下的这些手册（    ）（填“够”或“不够”）给5名同学每人一份。",
           "type": "填空",
           "score": "1分",
-          "imgs": []
+          "imgs": [],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "7",
@@ -224,7 +242,9 @@
           "content": "在括号里填合适的单位：中医推拿体验用的艾草热敷包每个边长约6（    ），一套推拿工具总重约2（    ）；铺在晾晒区的竹席长约4（    ），一株薄荷幼苗高约15（    ）。",
           "type": "填空",
           "score": "1分",
-          "imgs": []
+          "imgs": [],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "8",
@@ -232,7 +252,9 @@
           "content": "活动的草药展品编码规则是：“类别代码+展柜号+展品序号”。例如：艾草标本的编码是 YC03117（YC代表草药类，03号展柜，第117号展品）。那么，薄荷标本属于草药类（YC），在05号展柜、第132号展品，它的编码是（    ）。",
           "type": "填空",
           "score": "1分",
-          "imgs": []
+          "imgs": [],
+          "opts": [],
+          "subqs": []
         }
       ]
     },
@@ -248,6 +270,7 @@
           "content": "草药秘境的入口要挂草药介绍牌，每个牌子宽25厘米，现在要并排挂4块，选长（    ）的挂杆最合适。",
           "type": "选择题",
           "score": "2分",
+          "imgs": [],
           "opts": [
             {
               "id": "A",
@@ -264,7 +287,8 @@
               "txt": "1米20厘米",
               "img": ""
             }
-          ]
+          ],
+          "subqs": []
         },
         {
           "no": "2",
@@ -272,6 +296,7 @@
           "content": "香囊制作区准备了两种香料包，每包草本香料重12克，每包花香料重8克。老师准备了6包草本香料和4包花香料，算式“ $ 1 2 \times6+8 \times4 $ ”解决的问题是（    ）。",
           "type": "选择题",
           "score": "2分",
+          "imgs": [],
           "opts": [
             {
               "id": "A",
@@ -288,7 +313,8 @@
               "txt": "4包花香料比6包草本香料轻多少克？",
               "img": ""
             }
-          ]
+          ],
+          "subqs": []
         },
         {
           "no": "3",
@@ -296,6 +322,7 @@
           "content": "草药精灵的知识问答中，认识艾草的同学占 $ \\frac{2}{7} $ ，认识薄荷的同学占 $ \\frac{3}{7} $ ，认识金银花的同学占 $ \\frac{1}{7} $ 。认识（    ）的同学最多。",
           "type": "选择题",
           "score": "2分",
+          "imgs": [],
           "opts": [
             {
               "id": "A",
@@ -312,18 +339,19 @@
               "txt": "金银花",
               "img": ""
             }
-          ]
+          ],
+          "subqs": []
         },
         {
           "no": "4",
           "prompt": "",
-          "content": "草药精灵把一块草药实验田划分成了若干等份的小方格图案，下面是三位同学画出的种植规划图，下列（    ）涂色部分能用 $ \\frac{2}{9} $ 表示艾草的种植面积。",
+          "content": "草药精灵把一块草药实验田划分成了若干等份的小方格图案，下面是三位同学画出的种植规划图，下列（    ）涂色部分能用 $ \\frac{2}{9} $表示艾草的种植面积。",
           "type": "选择题",
-          "score": "2分",
+          "score": "3分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_1_1770513190255.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=Hxrcmb6OnFlnn66rmqJmk92quKA%3D&Expires=1770599590",
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_2_1770513190261.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=WA5XaZNa0F3QJVWjx%2FINvlGu2n4%3D&Expires=1770599590",
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_3_1770513190266.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=JDsSuo7TIoYtjZa%2BxTvj04vAxFs%3D&Expires=1770599590"
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_1_1770541758665.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=4Ti8%2BSOz1KHDeoZ0Veq8f6S7n5o%3D&Expires=1770628158",
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_2_1770541758670.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=JxBK1STJzf3cU321aR2L29r2uy4%3D&Expires=1770628158",
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_3_1770541758676.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=jFhvnnUZ2zn5Z0scpmmuGg7DlNg%3D&Expires=1770628158"
           ],
           "opts": [
             {
@@ -341,16 +369,17 @@
               "txt": "",
               "img": "[img:2]"
             }
-          ]
+          ],
+          "subqs": []
         },
         {
           "no": "5",
           "prompt": "",
           "content": "草药园里有一条笔直的灌溉水管，上面标出了4个连接喷头的节点，这条水管上一共有 （    ）条不同的线段。（图中A、B、C、D代表水管上的4个喷头节点）",
           "type": "选择题",
-          "score": "2分",
+          "score": "3分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_4_1770513190278.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=gz4PhJKOm%2B8erCjxsetVYVRiI5A%3D&Expires=1770599590"
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_4_1770541758683.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=o3Qi8Z91FU3TebDbmX%2BWk%2BcBxDQ%3D&Expires=1770628158"
           ],
           "opts": [
             {
@@ -368,7 +397,8 @@
               "txt": "6",
               "img": ""
             }
-          ]
+          ],
+          "subqs": []
         }
       ]
     },
@@ -381,22 +411,26 @@
         {
           "no": "1",
           "prompt": "",
-          "content": "请你根据香囊纹样的设计要求，完成以下绘制：\\\n(1) 金银花纹是一条比1dm少6cm的线段勾勒出来的，请你画出这条线段。（6分）\\\n(2) 如图，以给出的一条边和顶点A画一个直角。（2分）",
-          "type": "操作题",
+          "content": "请你根据香囊纹样的设计要求，完成以下绘制：\n(1) 金银花纹是一条比1dm少6cm的线段勾勒出来的，请你画出这条线段。（6分）\n(2) 如图，以给出的一条边和顶点A画一个直角。（2分）",
+          "type": "操作",
           "score": "8分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_5_1770513190289.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=a1xc%2FJHI1Uu4wwNx82F3I68KjOE%3D&Expires=1770599590"
-          ]
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_5_1770541758690.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=V043QxZvbPjvKSuDdEreCuU9GMk%3D&Expires=1770628158"
+          ],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "2",
           "prompt": "",
-          "content": "在中医药香囊的制作中，需要先在正方形布料上划分出香料填充区域。请你在右边正方形布料上涂出 $ \\frac{1}{2} $ 的区域，作为艾草填充区。（2分）",
-          "type": "操作题",
+          "content": "在中医药香囊的制作中，需要先在正方形布料上划分出香料填充区域。请你在右边正方形布料上涂出 $ \\frac{1}{2} $的区域，作为艾草填充区。（2分）",
+          "type": "操作",
           "score": "2分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_6_1770513190297.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=p0pNQKzYFUwm41xGSuBH5l%2BPuo0%3D&Expires=1770599590"
-          ]
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_6_1770541758696.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=EqULwJPlzft0XHLMiLwP2YPi86w%3D&Expires=1770628158"
+          ],
+          "opts": [],
+          "subqs": []
         }
       ]
     },
@@ -413,8 +447,10 @@
           "type": "应用题",
           "score": "5分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_7_1770513190313.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=cO8TUtKyxIx30t%2Bv%2FPsFrZTbte8%3D&Expires=1770599590"
-          ]
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_7_1770541758703.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=YOOjKooMeQt%2F5Wjf3rKyQfugrjo%3D&Expires=1770628158"
+          ],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "2",
@@ -422,7 +458,9 @@
           "content": "养生茶铺正在为“中医药文化体验周”分装养生茶包，每包需要搭配7克枸杞。现在要分装18包，准备120克枸杞够不够？（5分）",
           "type": "应用题",
           "score": "5分",
-          "imgs": []
+          "imgs": [],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "3",
@@ -430,7 +468,9 @@
           "content": "马王堆汉墓出土的帛书是汉代珍贵文献，包含了天文、医学等重要内容，是研究中国古代文化的重要资料。在“探秘马王堆”研学活动中，每个小组需要领取5套帛书临摹工具包。如果有138个小组参与，一共需要准备多少套帛书临摹工具包？（5分）",
           "type": "应用题",
           "score": "5分",
-          "imgs": []
+          "imgs": [],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "4",
@@ -439,29 +479,41 @@
           "type": "应用题",
           "score": "5分",
           "imgs": [
-            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208091307cb9bf76e122e420d%2Fcrop_1_1770513190321.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=eq9RwPiaPU6tXndNSzNXZA5kcxQ%3D&Expires=1770599590"
-          ]
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_1_1770541758711.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=BS72k4v9g4VHJE17thkdDGpIKcE%3D&Expires=1770628158"
+          ],
+          "opts": [],
+          "subqs": []
         },
         {
           "no": "5",
           "prompt": "",
-          "content": "2025年12月海南自贸港正式封关运作，封关不封岛，依托免税政策实现境外商品零关税进入海南，打造开放型自贸消费新生态。下面是小记者小亮了解到的海南免税店研学体验活动信息。（11分）\\\n$ \\textcircled{1} $ 上午到免税店参与研学体验的小学生有115人。\\\n$ \\textcircled{2} $ 体验“免税玩具挑选”的有32人，体验“海南特产选购”的人数比它多14人。\\\n$ \\textcircled{3} $ 下午参与研学的人数是上午的3倍少20人。\\\n$ \\textcircled{4} $ 体验“免税科普小课堂”的人数是“免税玩具挑选”和“海南特产选购”人数之和的2倍。\\\n(1) 要解决“下午有多少名小学生参与研学体验”的问题，用到的信息是（    ）， （填序号）并解答。（3分）\\\n(2) 体验“免税科普小课堂”的小学生有多少人？（8分）",
+          "content": "2025年12月海南自贸港正式封关运作，封关不封岛，依托免税政策实现境外商品零关税进入海南，打造开放型自贸消费新生态。下面是小记者小亮了解到的海南免税店研学体验活动信息。（11分）\n$ \\textcircled{1} $上午到免税店参与研学体验的小学生有115人。\n$ \\textcircled{2} $体验“免税玩具挑选”的有32人，体验“海南特产选购”的人数比它多14人。\n$ \\textcircled{3} $下午参与研学的人数是上午的3倍少20人。\n$ \\textcircled{4} $体验“免税科普小课堂”的人数是“免税玩具挑选”和“海南特产选购”人数之和的2倍。",
           "type": "应用题",
           "score": "11分",
+          "imgs": [
+            "https://maas-watermark-prod-new.cn-wlcb.ufileos.com/ocr%2Fcrop%2F20260208170915338f4c458f1c4605%2Fcrop_1_1770541758711.png?UCloudPublicKey=TOKEN_6df395df-5d8c-4f69-90f8-a4fe46088958&Signature=BS72k4v9g4VHJE17thkdDGpIKcE%3D&Expires=1770628158"
+          ],
+          "opts": [],
           "subqs": [
             {
               "no": "5.1",
-              "prompt": "(1) 要解决“下午有多少名小学生参与研学体验”的问题，用到的信息是（    ）， （填序号）并解答。（3分）",
+              "prompt": "(1) 要解决“下午有多少名小学生参与研学体验”的问题，用到的信息是（    ），（填序号）并解答。（3分）",
               "content": "",
-              "type": "子问题",
-              "score": "3分"
+              "type": "填空",
+              "score": "3分",
+              "imgs": [],
+              "opts": [],
+              "subqs": []
             },
             {
               "no": "5.2",
               "prompt": "(2) 体验“免税科普小课堂”的小学生有多少人？（8分）",
               "content": "",
-              "type": "子问题",
-              "score": "8分"
+              "type": "填空",
+              "score": "8分",
+              "imgs": [],
+              "opts": [],
+              "subqs": []
             }
           ]
         }
