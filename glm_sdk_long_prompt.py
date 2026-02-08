@@ -400,6 +400,7 @@ class ExamProcessor:
     def process_exam(self, file_url: str, grade_level: str = "primary", subject: str = "chinese") -> dict:
         """
         完整处理流程：OCR识别 -> 保存中间结果 -> 结构化处理
+        支持缓存：如果已存在 OCR 或 Markdown 文件，直接使用
         
         Args:
             file_url: 试卷文件 URL（格式：PDF、JPG、PNG）
@@ -420,17 +421,39 @@ class ExamProcessor:
         base_filename = self._extract_filename_from_url(file_url)
         print(f"[文件名] {base_filename}")
         
-        # 步骤1: OCR识别
-        ocr_result = self.ocr_recognize(file_url)
-        ocr_file = self.save_ocr_result(ocr_result, filename=f"{base_filename}_ocr.json")
+        # 定义文件路径
+        ocr_file = self.output_dir / f"{base_filename}_ocr.json"
+        md_file = self.output_dir / f"{base_filename}_ocr.md"
+        json_file = self.output_dir / f"{base_filename}.json"
         
-        # 步骤2: 提取并保存Markdown和图片信息
-        markdown_content, image_info = self.extract_markdown(ocr_result)
-        md_file = self.save_markdown(markdown_content, image_info, filename=f"{base_filename}_ocr.md")
+        # 步骤1: OCR识别（检查缓存）
+        if ocr_file.exists():
+            print(f"[缓存] 发现已存在的 OCR 文件: {ocr_file}")
+            with open(ocr_file, 'r', encoding='utf-8') as f:
+                ocr_result = json.load(f)
+            print("[缓存] 已加载 OCR 结果，跳过 OCR 识别")
+        else:
+            print("[OCR] 未找到缓存，开始 OCR 识别...")
+            ocr_result = self.ocr_recognize(file_url)
+            self.save_ocr_result(ocr_result, filename=f"{base_filename}_ocr.json")
+        
+        # 步骤2: 提取并保存Markdown（检查缓存）
+        if md_file.exists():
+            print(f"[缓存] 发现已存在的 Markdown 文件: {md_file}")
+            with open(md_file, 'r', encoding='utf-8') as f:
+                markdown_content = f.read()
+            # 从 OCR 结果中提取图片信息
+            _, image_info = self.extract_markdown(ocr_result)
+            print(f"[缓存] 已加载 Markdown 内容，跳过 Markdown 转换")
+        else:
+            print("[Markdown] 未找到缓存，开始提取 Markdown...")
+            markdown_content, image_info = self.extract_markdown(ocr_result)
+            self.save_markdown(markdown_content, image_info, filename=f"{base_filename}_ocr.md")
         
         # 步骤3: 结构化处理（传递学段和科目信息）
-        structured_data = self.structure_with_glm(file_url, md_file, image_info, grade_level, subject)
-        json_file = self.save_structured_result(structured_data, filename=f"{base_filename}.json")
+        print("[结构化] 开始结构化处理...")
+        structured_data = self.structure_with_glm(file_url, str(md_file), image_info, grade_level, subject)
+        self.save_structured_result(structured_data, filename=f"{base_filename}.json")
         
         total_elapsed = time.time() - total_start_time
         
@@ -441,9 +464,9 @@ class ExamProcessor:
         return {
             "filename": base_filename,
             "total_time": f"{total_elapsed:.2f}s",
-            "ocr_file": ocr_file,
-            "markdown_file": md_file,
-            "structured_file": json_file,
+            "ocr_file": str(ocr_file),
+            "markdown_file": str(md_file),
+            "structured_file": str(json_file),
             "structured_data": structured_data,
             "image_count": len(image_info)
         }
