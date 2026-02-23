@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# 上传文件
+uploads/*
+!uploads/.gitkeep
+
+# 输出文件
+output/*
+!output/.gitkeep
+
+# 环境变量
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+
+# 日志
+*.log
+
+# 临时文件
+*.tmp
+*.temp

@@ -29,15 +29,17 @@ API_KEY = "74437791901b4ebe88c2b95d5041d92c.3LgLCf8DudPNJxxr"
 # 小学数学
 # FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/full.jpg"
 # FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/%E4%B8%89%E5%B9%B4%E7%BA%A7%E4%B8%8A%E5%AD%A6%E6%9C%9F%E6%95%B0%E5%AD%A6%E5%8D%B7.pdf"
-FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/%E5%85%AD%E5%B9%B4%E7%BA%A7%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B8%9A%E8%B4%A8%E9%87%8F%E6%A3%80%E6%B5%8B%E5%8D%B7%281%29.pdf"
+# FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E6%95%B0%E5%AD%A6/%E5%85%AD%E5%B9%B4%E7%BA%A7%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B8%9A%E8%B4%A8%E9%87%8F%E6%A3%80%E6%B5%8B%E5%8D%B7%281%29.pdf"
 
 # 小学语文
 # FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E8%AF%AD%E6%96%87/%E4%B8%89%E5%B9%B4%E7%BA%A7%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E8%AF%AD%E6%96%87%281%29.pdf"
+# FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E8%AF%AD%E6%96%87/%E4%B8%89%E5%B9%B4%E7%BA%A7%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E8%AF%AD%E6%96%87%281%29.pdf"
+FILE_PATH = "https://ynx-test.oss-cn-beijing.aliyuncs.com/paper/%E8%AF%AD%E6%96%87/%E4%BA%94%E5%B9%B4%E7%BA%A7%E6%9C%9F%E6%9C%AB%E8%AF%95%E5%8D%B7%E8%AF%AD%E6%96%87.pdf"
 
 # 试卷信息（用于选择提示词）
 GRADE_LEVEL = "primary"  # primary(小学) / junior(初中) / senior(高中)
-# SUBJECT = "chinese"      # chinese(语文) / math(数学) / english(英语) 等
-SUBJECT = "math"      # chinese(语文) / math(数学) / english(英语) 等
+SUBJECT = "chinese"      # chinese(语文) / math(数学) / english(英语) 等
+# SUBJECT = "math"      # chinese(语文) / math(数学) / english(英语) 等
 
 # 模型配置
 OCR_MODEL = "glm-ocr"
@@ -421,10 +423,15 @@ class ExamProcessor:
         base_filename = self._extract_filename_from_url(file_url)
         print(f"[文件名] {base_filename}")
         
-        # 定义文件路径
-        ocr_file = self.output_dir / f"{base_filename}_ocr.json"
-        md_file = self.output_dir / f"{base_filename}_ocr.md"
-        json_file = self.output_dir / f"{base_filename}.json"
+        # 创建学科目录
+        subject_dir = self.output_dir / subject
+        subject_dir.mkdir(parents=True, exist_ok=True)
+        print(f"[目录] 输出目录: {subject_dir}")
+        
+        # 定义文件路径（放在学科目录下）
+        ocr_file = subject_dir / f"{base_filename}_ocr.json"
+        md_file = subject_dir / f"{base_filename}_ocr.md"
+        json_file = subject_dir / f"{base_filename}.json"
         
         # 步骤1: OCR识别（检查缓存）
         if ocr_file.exists():
@@ -435,7 +442,10 @@ class ExamProcessor:
         else:
             print("[OCR] 未找到缓存，开始 OCR 识别...")
             ocr_result = self.ocr_recognize(file_url)
-            self.save_ocr_result(ocr_result, filename=f"{base_filename}_ocr.json")
+            # 保存到学科目录
+            with open(ocr_file, 'w', encoding='utf-8') as f:
+                json.dump(ocr_result, f, ensure_ascii=False, indent=2)
+            print(f"[保存结果] OCR结果已保存到: {ocr_file}")
         
         # 步骤2: 提取并保存Markdown（检查缓存）
         if md_file.exists():
@@ -448,12 +458,19 @@ class ExamProcessor:
         else:
             print("[Markdown] 未找到缓存，开始提取 Markdown...")
             markdown_content, image_info = self.extract_markdown(ocr_result)
-            self.save_markdown(markdown_content, image_info, filename=f"{base_filename}_ocr.md")
+            # 保存到学科目录
+            with open(md_file, 'w', encoding='utf-8') as f:
+                f.write(markdown_content)
+            print(f"[保存结果] Markdown内容已保存到: {md_file}")
+            print(f"[图片信息] 识别到 {len(image_info)} 张图片")
         
         # 步骤3: 结构化处理（传递学段和科目信息）
         print("[结构化] 开始结构化处理...")
         structured_data = self.structure_with_glm(file_url, str(md_file), image_info, grade_level, subject)
-        self.save_structured_result(structured_data, filename=f"{base_filename}.json")
+        # 保存到学科目录
+        with open(json_file, 'w', encoding='utf-8') as f:
+            json.dump(structured_data, f, ensure_ascii=False, indent=2)
+        print(f"[保存结果] 结构化数据已保存到: {json_file}")
         
         total_elapsed = time.time() - total_start_time
         
@@ -463,6 +480,8 @@ class ExamProcessor:
         
         return {
             "filename": base_filename,
+            "subject": subject,
+            "subject_dir": str(subject_dir),
             "total_time": f"{total_elapsed:.2f}s",
             "ocr_file": str(ocr_file),
             "markdown_file": str(md_file),
@@ -486,6 +505,8 @@ def main():
     # 输出结果
     print("\n处理结果：")
     print(f"  文件名: {result['filename']}")
+    print(f"  学科: {result['subject']}")
+    print(f"  输出目录: {result['subject_dir']}")
     print(f"  总耗时: {result['total_time']}")
     print(f"  OCR结果文件: {result['ocr_file']}")
     print(f"  Markdown文件: {result['markdown_file']}")

@@ -1,0 +1,167 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "info": {
+      "description": "试卷基本信息",
+      "type": "object",
+      "properties": {
+        "title": {
+          "description": "试卷标题",
+          "type": "string"
+        },
+        "subject": {
+          "description": "学科（如：数学、语文）",
+          "type": "string"
+        },
+        "grade": {
+          "description": "年级（如：五年级）",
+          "type": "string"
+        },
+        "semester": {
+          "description": "学期（如：第一学期）",
+          "type": "string"
+        },
+        "year": {
+          "description": "学年（如：2025-2026）",
+          "type": "string"
+        },
+        "time": {
+          "description": "考试时长（如：90分钟）",
+          "type": "string"
+        },
+        "score": {
+          "description": "总分（如：100分）",
+          "type": "string"
+        }
+      },
+      "required": ["title", "subject", "grade"],
+      "additionalProperties": false
+    },
+    "sections": {
+      "description": "试卷大题列表",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "no": {
+            "description": "大题题号（如：一、二、三）",
+            "type": "string"
+          },
+          "title": {
+            "description": "大题标题",
+            "type": "string"
+          },
+          "score": {
+            "description": "大题总分值",
+            "type": "string"
+          },
+          "desc": {
+            "description": "大题说明文字、趣味引导、场景描述",
+            "type": "string"
+          },
+          "qs": {
+            "description": "该大题下的题目列表",
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "no": {
+                  "description": "题号（如：1、2、3）",
+                  "type": "string"
+                },
+                "prompt": {
+                  "description": "题目要求/指令（如：口算、单位换算、选择正确答案）。如果没有单独的要求则为空字符串",
+                  "type": "string"
+                },
+                "content": {
+                  "description": "题目主体内容。如果题目被拆分到subqs中，则此字段为空字符串。支持[img:索引]标记嵌入图片",
+                  "type": "string"
+                },
+                "desc": {
+                  "description": "题目提示语、温馨提示、注意事项",
+                  "type": "string"
+                },
+                "type": {
+                  "description": "题型（如：填空、选择题、计算题、应用题）",
+                  "type": "string"
+                },
+                "score": {
+                  "description": "题目分值",
+                  "type": "string"
+                },
+                "imgs": {
+                  "description": "题目相关的所有图片URL数组。选项图片也要放在这里，然后在opts中用[img:索引]引用",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "opts": {
+                  "description": "选择题选项数组。非选择题为空数组",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "description": "选项标识（如：A、B、C、D）",
+                        "type": "string"
+                      },
+                      "txt": {
+                        "description": "选项文字内容。如果选项是图片，使用[img:索引]标记。不能为空",
+                        "type": "string"
+                      },
+                      "img": {
+                        "description": "保留字段，通常为空字符串。图片通过txt字段的[img:索引]引用",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["id", "txt", "img"],
+                    "additionalProperties": false
+                  }
+                },
+                "subqs": {
+                  "description": "子题数组。用于拆分多个独立算式、填空或问题。不需要拆分时为空数组",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "no": {
+                        "description": "子题题号（如：1.1、1.2）",
+                        "type": "string"
+                      },
+                      "prompt": {
+                        "description": "子题要求/指令",
+                        "type": "string"
+                      },
+                      "content": {
+                        "description": "子题内容。支持[img:索引]标记",
+                        "type": "string"
+                      },
+                      "type": {
+                        "description": "子题题型",
+                        "type": "string"
+                      },
+                      "score": {
+                        "description": "子题分值",
+                        "type": "string"
+                      }
+                    },
+                    "required": ["no", "content"],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": ["no", "prompt", "content", "desc", "type", "score", "imgs", "opts", "subqs"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["no", "title", "qs"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["info", "sections"],
+  "additionalProperties": false
+}
