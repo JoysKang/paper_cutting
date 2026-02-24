@@ -523,7 +523,8 @@ async function optimizeSingleQuestion(questionId) {
             body: JSON.stringify({
                 image_path: currentImagePath,
                 question_id: questionId,
-                aliyun_result: currentData.aliyun_result
+                aliyun_result: currentData.aliyun_result,
+                original_filename: currentData.original_filename
             })
         });
 
@@ -541,29 +542,41 @@ async function optimizeSingleQuestion(questionId) {
                 // 同步给 JSON 源数据挂上优化后结构，以便能在右侧“解析JSON”视图看到
                 if (currentData.aliyun_result && currentData.aliyun_result.parts) {
                     currentData.aliyun_result.parts.forEach(part => {
-                        const q = (part.questions || []).find(q => q.id === questionId);
-                        if (q) {
-                            q.glm_optimized = data.optimized_json;
+                        const qIdx = (part.questions || []).findIndex(q => q.id === questionId);
+                        if (qIdx !== -1) {
+                            if (data.updated_questions && data.updated_questions.length > 0) {
+                                // 拆分：将原来的这道题切分成独立的提
+                                part.questions.splice(qIdx, 1, ...data.updated_questions);
+                            } else {
+                                part.questions[qIdx].glm_optimized = data.optimized_json;
+                            }
                         }
                     });
+                    // 重新绘制因为分离或坐标变更受到影响的框
+                    if (typeof buildImageOverlays === 'function') {
+                        buildImageOverlays();
+                    }
                 }
 
                 // 将后端返回的 HTML 标记文本片段使用 marked 解析成 DOM
                 qDiv.outerHTML = data.markdown_snippet;
 
-
                 // 给新插入的 DOM 节点重新绑定鼠标事件（因为外层 outerHTML 被整体替换）
                 addQuestionHoverEffect();
 
-                // 单独重新渲染本题的 LaTeX
-                const newDiv = document.querySelector(`.question-item[data-question-id="${questionId}"]`);
-                if (window.renderMathInElement && newDiv) {
-                    window.renderMathInElement(newDiv, {
-                        delimiters: [
-                            { left: "$$", right: "$$", display: true },
-                            { left: "$", right: "$", display: false }
-                        ],
-                        throwOnError: false
+                // 单独重新渲染本题的 LaTeX（由于涉及拆分，需要遍历新回来的题目ID）
+                if (window.renderMathInElement && data.updated_questions) {
+                    data.updated_questions.forEach(uq => {
+                        const newDiv = document.querySelector(`.question-item[data-question-id="${uq.id}"]`);
+                        if (newDiv) {
+                            window.renderMathInElement(newDiv, {
+                                delimiters: [
+                                    { left: "$$", right: "$$", display: true },
+                                    { left: "$", right: "$", display: false }
+                                ],
+                                throwOnError: false
+                            });
+                        }
                     });
                 }
             }

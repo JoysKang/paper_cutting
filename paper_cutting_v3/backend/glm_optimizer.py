@@ -44,11 +44,14 @@ class SubQuestion(BaseModel):
     content: str = Field(description="该子题内容")
 
 class OptimizedQuestion(BaseModel):
-    id: str = Field(description="必须严格保留传入的原题 ID，不可修改！")
+    id: str = Field(description="必须严格保留或分配子ID（如 1-7-1）！")
     prompt: Optional[str] = Field(default=None, description="题干引导语，如'填空题'、'选择题'")
     content: str = Field(description="题目实质正文（不含选项）。数学公式用 $...$ 包裹。")
     opts: Optional[List[Option]] = Field(default_factory=list, description="选项数组")
     subqs: Optional[List[SubQuestion]] = Field(default_factory=list, description="子题数组")
+
+class OptimizedResult(BaseModel):
+    questions: List[OptimizedQuestion]
 
 
 # ==========================================
@@ -148,9 +151,6 @@ class GLMOptimizer:
             text = response.md_results
             if not text:
                 return None
-            # 将 layout_parsing 返回的图片占位符 ![](...) 普遍替换为 $\bigcirc$
-            # 这些图片占位符通常在小学数学题目中代表需填写的圆圈
-            text = re.sub(r'!\[\]\([^)]+\)', '$\\bigcirc$', text)
             return text
         except Exception as e:
             print(f"⚠️ GLM-OCR 识别失败，降级为阿里云文字: {e}")
@@ -183,26 +183,35 @@ class GLMOptimizer:
 {aly_text}"""
 
         system_prompt = """你是一个试卷题目结构化大模型。
-请在传入的文字中提取出指定的唯一一道题目。
-因为传入的“GLM-OCR高精度文字”可能包含了图片上下截取到的其他多道干扰题目，**你必须对照那段“阿里云粗糙文字”作为线索，找到这道题的真正边界（开头和结尾）**，把它的对应内容完整提取出来！
+传入的“阿里云粗糙文字”提供了你**真正需要提取的内容范围的线索**。
+由于前置 OCR 的切分问题：
+1. 一方面，多道题目可能在“阿里云粗糙文字”中粘连在一起（比如包含第7和第8题）。你必须将它们**拆开**，放到 `questions` 数组中独立输出。
+2. 另一方面，长文本片段“GLM-OCR高精度文字”中可能会多出很多**完全没有在“阿里云粗糙文字”里出现过**的周边干扰题目/图文（比如下一题、或者旁边的无关段落）。你必须将这些干扰内容**毫不留情地全部丢弃**，绝对不能也把它们提取成题目！
 
 必须严格整理为以下 JSON 格式输出，不要输出其他任何思维过程或讲解：
 
 ```json
 {
-  "id": "（填入用户传入的 系统分配题号，必须一字不改）",
-  "prompt": "（在这道题抽出的提问引导语，如'填空题'、'选择题'，若无则 null）",
-  "content": "（提取出的这道题的正文，不含选项！不能有其他干扰题干！数学公式等保持 $...$ 格式）",
-  "opts": [{"id": "选项标识", "txt": "选项内容"}],
-  "subqs": []
+  "questions": [
+    {
+      "id": "（若是单题，填入原题号即可；如果是拆分出的多道题目，可加后缀如 '1-7_1', '1-7_2' 等以示区分）",
+      "prompt": "（在这段文字开头抽出的提问引导语，如'填空题'、'选择题'，若无则 null）",
+      "content": "（提取出的正文。如果是拆分后的独立题目，必须包含属于这道题开头的连串题号如'7.', '8.'等，数学公式保持 $...$ 格式）",
+      "opts": [{"id": "选项标识", "txt": "选项内容"}],
+      "subqs": []
+    }
+  ]
 }
 ```
 
 规则：
-1. **只提取匹配“阿里云文字”特征的那一道题！绝不可以把上下相邻的题干也吞并进来！**
-2. 填空题的空白（    ）、算式中的 $\\bigcirc$ 占位圆圈等必须完整保留在 content 里。绝对不能把代表留空的括号当成选择题的选项提取！
-3. 若本题有真正的单选或多选选项（如 A. B. C. 或者 ① ② ③ 配合选项文字），必须提取到 opts 数组里；否则 opts 返回空数组 []。
-4. 不要做任何解题、补全或补充额外知识，忠于原始考卷的文本和排版即可。"""
+规则：
+1. **【剔除多余干扰题，这是死命令！】只要某段文字（或某道题）在“阿里云粗糙文字”中找不到明显的对应线索，它就是由于截图范围过大卷进来的多余垃圾！绝不可以将其算作一道题输出到 JSON 里！一定要丢弃它！**
+2. **【核心正文必须以 GLM-OCR 为准】阿里云只有粗糙文字并容易丢失公式/符号（如 $\\bigcirc$ 等）。所以你的提取内容必须完全采用“GLM-OCR高精度文字”中的文字、排版和 LaTeX 公式表达式，不能盲目照抄阿里云！**
+3. **【拆分连体题】** 如果“阿里云粗糙文字”包含不止一道题，你要在保证不多提取无关题目的前提下，把它们正确地拆分成数组里独立的 `{}` 对象。
+4. **【极其重点！！！保留原题号】提取出的每道题的 `content` 第一个字必须完全还原该题的题号（例如 `7.`、`8.`）。哪怕 GLM-OCR 的长文本中弄丢了它，你也必须手动将 `7.` 之类的文本补在 `content` 最前方。绝对不能吞掉题号！**
+5. 填空题的留空（    ）、大小圆圈（$\\bigcirc$ 等占位符）必须【完全按照 GLM-OCR 中的样子】原样保留在 content 里。绝对不能把代表留空的括号当成选择题的选项提取！
+6. 选项、小题依然像以前一样分别放入 `opts` / `subqs` 取代。图片配图等无意义代码标识如 `![](page...)` 可以直接忽略。"""
 
         try:
             response = self.chat_client.chat.completions.create(
@@ -214,7 +223,9 @@ class GLMOptimizer:
                 temperature=0.1
             )
             result_text = response.choices[0].message.content
-
+            if result_text is None:
+                result_text = ""
+                
             # 提取 JSON 块
             if "```json" in result_text:
                 start = result_text.find("```json") + 7
@@ -227,11 +238,41 @@ class GLMOptimizer:
                 if end != -1:
                     result_text = result_text[start:end].strip()
 
+            import re
+            # 修复：防止大模型在 JSON 里把 LaTeX 单斜杠（如 \bigcirc, \triangle）输出导致
+            # 被 Python JSON 解析器当作 \b (backspace) 或 \t (tab) 转义，统一强制转为双斜杠
+            if isinstance(result_text, str):
+                result_text = re.sub(
+                    r'(?<!\\)\\(bigcirc|triangle|div|times|textcircled|Box|left|right|cdot|leqslant|geqslant)', 
+                    r'\\\\\1', 
+                    result_text
+                )
+
             result_dict = json_repair.loads(result_text)
             if not isinstance(result_dict, dict):
                 raise ValueError(f"返回格式并非字典: {result_text}")
 
-            validated = OptimizedQuestion.model_validate(result_dict)
+            # 兼容：如果它返回的是老格式单个题目，包成 list
+            if 'questions' not in result_dict:
+                if 'id' in result_dict and 'content' in result_dict:
+                    result_dict = {"questions": [result_dict]}
+                else:
+                    raise ValueError(f"返回格式缺少 questions 数组: {result_text}")
+
+            for q_dict in result_dict['questions']:
+                # 强力洗掉所有依然残留进来的 ![](page=0,...) 图片占位符
+                if q_dict.get('content'):
+                    content_text = re.sub(r'!\[.*?\]\(page=[^)]+\)', '', q_dict['content']).strip()
+                    # 如果只有一道题，做下双保险兜底
+                    if len(result_dict['questions']) == 1:
+                        prefix_match = re.match(r'^([0-9]+\.|[①-⑨])', aly_text.strip())
+                        if prefix_match:
+                            prefix = prefix_match.group(1)
+                            if not content_text.startswith(prefix):
+                                content_text = f"{prefix}{content_text}"
+                    q_dict['content'] = content_text
+
+            validated = OptimizedResult.model_validate(result_dict)
             return validated.model_dump(exclude_none=True)
 
         except Exception as e:

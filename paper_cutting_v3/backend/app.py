@@ -343,53 +343,74 @@ def optimize_single_question():
         
         img_b64 = None
         if image_path and os.path.exists(image_path) and target_q.get('position'):
-            # 使用 PIL 根据 position 裁切指定题目的图片区域
+            # 使用 PIL 根据 position 裁切指定题目的图片区域，调用 optimizer 的高容错裁剪逻辑
             try:
                 img = Image.open(image_path)
-                pos = target_q['position']
-                # box: (left, upper, right, lower)
-                box = (pos['x'] - 10, pos['y'] - 10, pos['x'] + pos['width'] + 10, pos['y'] + pos['height'] + 10)
-                box = (max(0, box[0]), max(0, box[1]), min(img.width, box[2]), min(img.height, box[3]))
-                cropped = img.crop(box)
-                
-                buffer = io.BytesIO()
-                # 统一转为 RGB 保存 JPEG 以优化体积，或保持 PNG
-                if cropped.mode != 'RGB':
-                    cropped = cropped.convert('RGB')
-                cropped.save(buffer, format="JPEG")
-                img_b64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                img_b64 = glm_optimizer._crop_question_image(img, target_q)
             except Exception as e:
                 print(f"⚠️ 图像裁切失败，将以纯文本模式优化本题: {e}")
         
         # 单题优化
-        optimized_json = glm_optimizer.optimize_single(target_q, image_b64=img_b64)
-        # 把优化结果合并进 target_q，这样渲染时能拿到最新的 text/options
-        if optimized_json and not optimized_json.get('error'):
-            target_q['glm_optimized'] = optimized_json
-            if optimized_json.get('prompt'):
-                target_q['type_name'] = optimized_json['prompt']
-            target_q['text'] = (optimized_json.get('content') or target_q.get('text', ''))
-            if optimized_json.get('opts'):
-                target_q['options'] = [
-                    {"option": o.get("id", ""), "text": o.get("txt", "")}
-                    for o in optimized_json.get('opts', [])
-                ]
+        optimized_result = glm_optimizer.optimize_single(target_q, image_b64=img_b64)
         
-        # 渲染单题 HTML 片段
+        # 把优化结果合并进 target_q，这样渲染时能拿到最新的 text/options
+        # 如果大模型返回了多道题（拆分题），我们这里将它们合并渲染成连续的 HTML 返回
+        markdown_snippets = []
+        questions_data = optimized_result.get('questions', [optimized_result]) if not optimized_result.get('error') else []
+        
         image_output_dir = OUTPUT_FOLDER / data.get('original_filename', 'result')
-        markdown_snippet = render_single_question_html(
-            target_q,
-            image_output_dir=image_output_dir,
-            original_filename=data.get('original_filename', 'result'),
-            is_optimized=True
-        )
-
+        
+        total_text_len = sum(len(q.get('content', '')) for q in questions_data)
+        current_y = target_q.get('position', {}).get('y', 0)
+        updated_questions = []
+        
+        for q_obj in questions_data:
+            # 造一个临时 q 字典，继承原题的配图等属性
+            temp_q = target_q.copy()
+            temp_q['id'] = q_obj.get('id', target_q['id'])
+            temp_q['glm_optimized'] = q_obj
+            if q_obj.get('prompt'):
+                temp_q['type_name'] = q_obj['prompt']
+            temp_q['text'] = q_obj.get('content', '')
+            if q_obj.get('opts'):
+                temp_q['options'] = [
+                    {"option": o.get("id", ""), "text": o.get("txt", "")}
+                    for o in q_obj.get('opts', [])
+                ]
+            
+            # 坐标等比例拆分：连图上的高亮框一起拆分成互相独立的小块
+            if len(questions_data) > 1 and temp_q.get('position') and total_text_len > 0:
+                text_len = len(q_obj.get('content', ''))
+                ratio = text_len / total_text_len
+                new_height = int(target_q['position'].get('height', 0) * ratio)
+                
+                temp_q['position'] = {
+                    'x': target_q['position'].get('x', 0),
+                    'y': current_y,
+                    'width': target_q['position'].get('width', 0),
+                    'height': new_height
+                }
+                current_y += new_height
+                
+            updated_questions.append(temp_q)
+            
+            snippet = render_single_question_html(
+                temp_q,
+                image_output_dir=image_output_dir,
+                original_filename=data.get('original_filename', 'result'),
+                is_optimized=True
+            )
+            markdown_snippets.append(snippet)
+        
+        # 用新字典记录最终合并的片段
+        combined_markdown = "\n".join(markdown_snippets) if markdown_snippets else ""
         
         return jsonify({
             'status': 'success',
             'question_id': question_id,
-            'markdown_snippet': markdown_snippet,
-            'optimized_json': optimized_json
+            'markdown_snippet': combined_markdown,
+            'updated_questions': updated_questions,
+            'optimized_json': optimized_result
         })
         
     except Exception as e:
@@ -427,7 +448,7 @@ def render_single_question_html(q: dict, image_output_dir=None, original_filenam
     if q.get('options'):
         lines.append('<div class="options">')
         for opt in q['options']:
-            lines.append(f"{opt.get('option', '')}. {opt.get('text', '')}")
+            lines.append(f"<div>{opt.get('option', '')}. {opt.get('text', '')}</div>")
         lines.append('</div>\n')
 
     # 处理单题修复中附带的子题结构
@@ -435,7 +456,7 @@ def render_single_question_html(q: dict, image_output_dir=None, original_filenam
     if glm_opt.get('subqs'):
         lines.append('<div class="subquestions">')
         for subq in glm_opt['subqs']:
-            lines.append(f"  ({subq.get('no', '')}) {subq.get('content', '')}")
+            lines.append(f"<div>  ({subq.get('no', '')}) {subq.get('content', '')}</div>")
         lines.append('</div>\n')
         
     lines.append('</div>\n')
@@ -502,14 +523,14 @@ def convert_glm_to_markdown(glm_result):
             if q.get('opts'):
                 lines.append('<div class="options">')
                 for opt in q['opts']:
-                    lines.append(f"{opt['id']}. {opt['txt']}")
+                    lines.append(f"<div>{opt['id']}. {opt['txt']}</div>")
                 lines.append('</div>\n')
             
             # 子题
             if q.get('subqs'):
                 lines.append('<div class="subquestions">')
                 for subq in q['subqs']:
-                    lines.append(f"  ({subq.get('no', '')}) {subq.get('content', '')}")
+                    lines.append(f"<div>  ({subq.get('no', '')}) {subq.get('content', '')}</div>")
                 lines.append('</div>\n')
             
             lines.append('</div>\n')

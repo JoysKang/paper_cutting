@@ -5,8 +5,8 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 
-                 'Microsoft YaHei', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB',
+        'Microsoft YaHei', sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     padding: 20px;
@@ -23,7 +23,7 @@ header {
     padding: 30px;
     border-radius: 12px;
     margin-bottom: 20px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
@@ -69,7 +69,7 @@ h1 {
 
 .btn:hover:not(:disabled) {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn:disabled {
@@ -147,7 +147,7 @@ input[type="file"]:hover {
     background: white;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
@@ -202,7 +202,7 @@ input[type="file"]:hover {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Result Container */
@@ -298,8 +298,13 @@ input[type="file"]:hover {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .loading-text {
@@ -345,13 +350,13 @@ input[type="file"]:hover {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .upload-section,
     .options-section,
     .view-section {
         width: 100%;
     }
-    
+
     .btn {
         width: 100%;
         justify-content: center;
@@ -360,11 +365,17 @@ input[type="file"]:hover {
 
 /* 题目样式 */
 .question-item {
-    margin: 20px 0;
-    padding: 15px;
+    margin: 0;
+    padding: 6px 10px;
     border-left: 3px solid #e0e0e0;
     transition: all 0.3s ease;
     cursor: pointer;
+    line-height: 1.5;
+    white-space: normal;
+}
+
+.question-item p {
+    margin: 2px 0;
 }
 
 .question-item:hover {
@@ -380,24 +391,24 @@ input[type="file"]:hover {
 
 /* 选项样式 */
 .options {
-    margin-top: 10px;
+    margin-top: 4px;
     padding-left: 20px;
 }
 
 .options div {
-    margin: 5px 0;
+    margin: 2px 0;
     color: #555;
 }
 
 /* 子题样式 */
 .subquestions {
-    margin-top: 10px;
+    margin-top: 4px;
     padding-left: 20px;
     color: #666;
 }
 
 .subquestions div {
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 /* JSON 视图样式 */
@@ -514,7 +525,7 @@ input[type="file"]:hover {
 .q-actions {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .btn-optimize-single {
@@ -547,6 +558,12 @@ input[type="file"]:hover {
 }
 
 @keyframes highlight-fade {
-    0% { background-color: #fff3cd; border-left-color: #ffc107; }
-    100% { background-color: transparent; }
+    0% {
+        background-color: #fff3cd;
+        border-left-color: #ffc107;
+    }
+
+    100% {
+        background-color: transparent;
+    }
 }
