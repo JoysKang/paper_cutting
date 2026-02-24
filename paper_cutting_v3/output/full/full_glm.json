@@ -1,0 +1,820 @@
+{
+  "parts": [
+    {
+      "questions": [
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 435,
+                "y": 282
+              }
+            },
+            {
+              "position": {
+                "height": 16,
+                "width": 44,
+                "x": 139,
+                "y": 283
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 307,
+                "y": 253
+              }
+            },
+            {
+              "position": {
+                "height": 16,
+                "width": 45,
+                "x": 371,
+                "y": 282
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 275,
+                "y": 284
+              }
+            },
+            {
+              "position": {
+                "height": 14,
+                "width": 46,
+                "x": 168,
+                "y": 254
+              }
+            },
+            {
+              "position": {
+                "height": 14,
+                "width": 46,
+                "x": 420,
+                "y": 252
+              }
+            }
+          ],
+          "figures": [],
+          "id": "1-1",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 52,
+            "width": 422,
+            "x": 102,
+            "y": 251
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[填一填] 1. 12÷6=( ),可以表示把( )平均分成( )份,每份是( );也可以表示( )里面有( )个( )。",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "1-1",
+            "prompt": "填一填",
+            "content": "1. 12÷6=( ),可以表示把( )平均分成( )份,每份是( );也可以表示( )里面有( )个( )。"
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 46,
+                "x": 434,
+                "y": 312
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 334,
+                "y": 313
+              }
+            },
+            {
+              "position": {
+                "height": 16,
+                "width": 44,
+                "x": 218,
+                "y": 313
+              }
+            }
+          ],
+          "figures": [],
+          "id": "1-2",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 20,
+            "width": 423,
+            "x": 101,
+            "y": 311
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[填一填] 2. 在18÷3=6中,( )是被除数,( )是除数,( )是商。",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "1-2",
+            "prompt": "填一填",
+            "content": "2. 在18÷3=6中,( )是被除数,( )是除数,( )是商。"
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 16,
+                "width": 45,
+                "x": 137,
+                "y": 378
+              }
+            },
+            {
+              "position": {
+                "height": 13,
+                "width": 45,
+                "x": 283,
+                "y": 409
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 226,
+                "y": 408
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 479,
+                "y": 377
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 45,
+                "x": 340,
+                "y": 408
+              }
+            },
+            {
+              "position": {
+                "height": 13,
+                "width": 88,
+                "x": 428,
+                "y": 408
+              }
+            }
+          ],
+          "figures": [
+            {
+              "bbox": {
+                "height": 24,
+                "width": 231,
+                "x": 207,
+                "y": 340
+              },
+              "index": 2
+            }
+          ],
+          "id": "1-3",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 88,
+            "width": 425,
+            "x": 101,
+            "y": 337
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[填一填] 3. 把( )个苹果平均分给2个小朋友,每个小朋友分( )个苹果,列式为( )÷( )=( ),读作( )。",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "1-3",
+            "prompt": "填一填",
+            "content": "3. 把( )个苹果平均分给2个小朋友,每个小朋友分( )个苹果,列式为( )÷( )=( ),读作( )。"
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 13,
+                "width": 127,
+                "x": 277,
+                "y": 520
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 47,
+                "x": 340,
+                "y": 487
+              }
+            },
+            {
+              "position": {
+                "height": 13,
+                "width": 123,
+                "x": 141,
+                "y": 549
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 46,
+                "x": 123,
+                "y": 519
+              }
+            }
+          ],
+          "figures": [
+            {
+              "bbox": {
+                "height": 43,
+                "width": 214,
+                "x": 247,
+                "y": 436
+              },
+              "index": 1
+            }
+          ],
+          "id": "1-4",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 133,
+            "width": 421,
+            "x": 105,
+            "y": 436
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[填一填] 4. (名校期末真题)上图中一共有24个气球,每( )个扎一束,扎成了( )束,列式计算为( ),用到的乘法口诀是( )。",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "1-4",
+            "prompt": "填一填",
+            "content": "4. (名校期末真题)上图中一共有24个气球,每( )个扎一束,扎成了( )束,列式计算为( ),用到的乘法口诀是( )。"
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 17,
+                "width": 44,
+                "x": 464,
+                "y": 580
+              }
+            },
+            {
+              "position": {
+                "height": 16,
+                "width": 46,
+                "x": 308,
+                "y": 580
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 44,
+                "x": 276,
+                "y": 617
+              }
+            },
+            {
+              "position": {
+                "height": 24,
+                "width": 24,
+                "x": 376,
+                "y": 576
+              }
+            }
+          ],
+          "figures": [],
+          "id": "1-5",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 57,
+            "width": 422,
+            "x": 102,
+            "y": 579
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[填一填] 5. 有12根小棒,最多可以摆( )个 ;可以摆( )个;如果摆成▲,可以摆( )个。(图形都是独立的)",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "1-5",
+            "prompt": "填一填",
+            "content": "5. 有12根小棒,最多可以摆( )个 ;可以摆( )个;如果摆成▲,可以摆( )个。(图形都是独立的)"
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 31,
+                "width": 31,
+                "x": 248,
+                "y": 713
+              }
+            },
+            {
+              "position": {
+                "height": 31,
+                "width": 31,
+                "x": 353,
+                "y": 712
+              }
+            },
+            {
+              "position": {
+                "height": 33,
+                "width": 32,
+                "x": 344,
+                "y": 672
+              }
+            },
+            {
+              "position": {
+                "height": 32,
+                "width": 31,
+                "x": 249,
+                "y": 674
+              }
+            },
+            {
+              "position": {
+                "height": 33,
+                "width": 31,
+                "x": 133,
+                "y": 712
+              }
+            },
+            {
+              "position": {
+                "height": 30,
+                "width": 31,
+                "x": 454,
+                "y": 713
+              }
+            },
+            {
+              "position": {
+                "height": 31,
+                "width": 31,
+                "x": 454,
+                "y": 673
+              }
+            }
+          ],
+          "figures": [],
+          "id": "1-6",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 97,
+            "width": 421,
+            "x": 105,
+            "y": 649
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[填一填] 6. 在O里填上“+”“-“x”或“÷”。24  6=30 15  3=5 4 4-18 21O7=14 3=325  5=20 30  5=6 20  8=12",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "1-6",
+            "prompt": "填一填",
+            "content": "6. 在O里填上“+”“-“x”或“÷”。24  6=30 15  3=5 4 4-18 21O7=14 3=325  5=20 30  5=6 20  8=12"
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 44,
+                "x": 766,
+                "y": 132
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 46,
+                "x": 983,
+                "y": 48
+              }
+            }
+          ],
+          "figures": [],
+          "id": "1-7",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 102,
+            "width": 421,
+            "x": 611,
+            "y": 48
+          },
+          "prob": 0,
+          "raw_type": 0,
+          "table_list": [],
+          "text": "[填一填] 7. 把20块糖平均分给小明和他的4个同学,每人分到( )块糖。",
+          "type": "choice",
+          "type_name": "选择题",
+          "glm_optimized": {
+            "id": "1-7",
+            "prompt": "填一填",
+            "content": "7. 把20块糖平均分给小明和他的4个同学,每人分到( )块糖。"
+          }
+        }
+      ],
+      "title": "一、填一填。(第3题4分,其余每空1分,共31分)"
+    },
+    {
+      "questions": [
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 43,
+                "x": 678,
+                "y": 215
+              }
+            }
+          ],
+          "figures": [
+            {
+              "bbox": {
+                "height": 49,
+                "width": 346,
+                "x": 630,
+                "y": 239
+              },
+              "index": 3
+            }
+          ],
+          "id": "2-1",
+          "num_choices": 0,
+          "options": [
+            {
+              "option": "①",
+              "text": "如图①所示"
+            },
+            {
+              "option": "②",
+              "text": "如图②所示"
+            },
+            {
+              "option": "③",
+              "text": "如图③所示"
+            }
+          ],
+          "position": {
+            "height": 109,
+            "width": 415,
+            "x": 613,
+            "y": 186
+          },
+          "prob": 0,
+          "raw_type": 0,
+          "table_list": [],
+          "text": "[选一选] 1. 24里面有几个4?明明通过圈一圈得到了答案,下面圈法正确的是( )。",
+          "type": "choice",
+          "type_name": "选择题",
+          "glm_optimized": {
+            "id": "2-1",
+            "prompt": "选一选",
+            "content": "1. 24里面有几个4?明明通过圈一圈得到了答案,下面圈法正确的是( )。",
+            "opts": [
+              {
+                "id": "①",
+                "txt": "如图①所示"
+              },
+              {
+                "id": "②",
+                "txt": "如图②所示"
+              },
+              {
+                "id": "③",
+                "txt": "如图③所示"
+              }
+            ]
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 44,
+                "x": 937,
+                "y": 299
+              }
+            }
+          ],
+          "figures": [],
+          "id": "2-2",
+          "num_choices": 0,
+          "options": [
+            {
+              "option": "①",
+              "text": "12÷2"
+            },
+            {
+              "option": "②",
+              "text": "12+3"
+            },
+            {
+              "option": "③",
+              "text": "12÷6"
+            }
+          ],
+          "position": {
+            "height": 48,
+            "width": 375,
+            "x": 613,
+            "y": 298
+          },
+          "prob": 0,
+          "raw_type": 0,
+          "table_list": [],
+          "text": "[选一选] 2. 下面与12÷4用同一句乘法口诀计算的算式是( )。①12÷2 ②12+3 ③12÷6",
+          "type": "choice",
+          "type_name": "选择题",
+          "glm_optimized": {
+            "id": "2-2",
+            "prompt": "选一选",
+            "content": "2. 下面与12÷4用同一句乘法口诀计算的算式是( )。①12÷2 ②12+3 ③12÷6",
+            "opts": [
+              {
+                "id": "①",
+                "txt": "12÷2"
+              },
+              {
+                "id": "②",
+                "txt": "12+3"
+              },
+              {
+                "id": "③",
+                "txt": "12÷6"
+              }
+            ]
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 44,
+                "x": 782,
+                "y": 355
+              }
+            }
+          ],
+          "figures": [],
+          "id": "2-3",
+          "num_choices": 0,
+          "options": [
+            {
+              "option": "①",
+              "text": "6"
+            },
+            {
+              "option": "②",
+              "text": "9"
+            },
+            {
+              "option": "③",
+              "text": "3"
+            }
+          ],
+          "position": {
+            "height": 48,
+            "width": 316,
+            "x": 613,
+            "y": 354
+          },
+          "prob": 0,
+          "raw_type": 0,
+          "table_list": [],
+          "text": "[选一选] 3. 从18里面连续减3,减( )次后结果是0。①6 ②9 ③3",
+          "type": "choice",
+          "type_name": "选择题",
+          "glm_optimized": {
+            "id": "2-3",
+            "prompt": "选一选",
+            "content": "3. 从18里面连续减3,减( )次后结果是0。①6 ②9 ③3",
+            "opts": [
+              {
+                "id": "①",
+                "txt": "6"
+              },
+              {
+                "id": "②",
+                "txt": "9"
+              },
+              {
+                "id": "③",
+                "txt": "3"
+              }
+            ]
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 14,
+                "width": 44,
+                "x": 821,
+                "y": 439
+              }
+            },
+            {
+              "position": {
+                "height": 15,
+                "width": 49,
+                "x": 788,
+                "y": 413
+              }
+            }
+          ],
+          "figures": [],
+          "id": "2-4",
+          "num_choices": 0,
+          "options": [
+            {
+              "option": "①",
+              "text": "分给6个小朋友"
+            },
+            {
+              "option": "②",
+              "text": "每人分4个风车"
+            },
+            {
+              "option": "③",
+              "text": "已经做了4个风车"
+            }
+          ],
+          "position": {
+            "height": 101,
+            "width": 417,
+            "x": 613,
+            "y": 410
+          },
+          "prob": 0,
+          "raw_type": 0,
+          "table_list": [],
+          "text": "[选一选] 4. 王阿姨做了24个风车, ,可以分给几个小朋友?解决____这个问题选择合适的信息是( )。①分给6个小朋友 ②每人分4个风车③已经做了4个风车",
+          "type": "choice",
+          "type_name": "选择题",
+          "glm_optimized": {
+            "id": "2-4",
+            "prompt": "选一选",
+            "content": "4. 王阿姨做了24个风车, ,可以分给几个小朋友?解决____这个问题选择合适的信息是( )。①分给6个小朋友 ②每人分4个风车③已经做了4个风车",
+            "opts": [
+              {
+                "id": "①",
+                "txt": "分给6个小朋友"
+              },
+              {
+                "id": "②",
+                "txt": "每人分4个风车"
+              },
+              {
+                "id": "③",
+                "txt": "已经做了4个风车"
+              }
+            ]
+          }
+        },
+        {
+          "answer_areas": [
+            {
+              "position": {
+                "height": 15,
+                "width": 44,
+                "x": 923,
+                "y": 549
+              }
+            }
+          ],
+          "figures": [],
+          "id": "2-5",
+          "num_choices": 0,
+          "options": [
+            {
+              "option": "①",
+              "text": "16"
+            },
+            {
+              "option": "②",
+              "text": "12"
+            },
+            {
+              "option": "③",
+              "text": "25"
+            }
+          ],
+          "position": {
+            "height": 74,
+            "width": 414,
+            "x": 614,
+            "y": 522
+          },
+          "prob": 0,
+          "raw_type": 0,
+          "table_list": [],
+          "text": "[选一选] 5. (名校期末真题)有一堆糖果,数量在1020之间,平均分成的份数和每份的数量同样多,这堆糖果有( )块。①16 ②12 ③25",
+          "type": "choice",
+          "type_name": "选择题",
+          "glm_optimized": {
+            "id": "2-5",
+            "prompt": "选一选",
+            "content": "5. (名校期末真题)有一堆糖果,数量在1020之间,平均分成的份数和每份的数量同样多,这堆糖果有( )块。①16 ②12 ③25",
+            "opts": [
+              {
+                "id": "①",
+                "txt": "16"
+              },
+              {
+                "id": "②",
+                "txt": "12"
+              },
+              {
+                "id": "③",
+                "txt": "25"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "二、选一选。(把正确答案的序号填在括号里)(共10分)"
+    },
+    {
+      "questions": [
+        {
+          "answer_areas": [],
+          "figures": [],
+          "id": "3-1",
+          "num_choices": 0,
+          "options": [],
+          "position": {
+            "height": 91,
+            "width": 375,
+            "x": 619,
+            "y": 649
+          },
+          "prob": 0,
+          "raw_type": 1,
+          "table_list": [],
+          "text": "[算一算] 1. 直接写出得数。(12分) 10+5= 30 6= 15+3= 3x6=16+4= 62-30= 40+5= 12+2=25+5= 9+3= 12+4= 24÷4=",
+          "type": "fill_blank",
+          "type_name": "填空题",
+          "glm_optimized": {
+            "id": "3-1",
+            "prompt": "算一算",
+            "content": "1. 直接写出得数。(12分) 10+5= 30 6= 15+3= 3x6=16+4= 62-30= 40+5= 12+2=25+5= 9+3= 12+4= 24÷4="
+          }
+        }
+      ],
+      "title": "三、算一算。(共23分)"
+    }
+  ]
+}

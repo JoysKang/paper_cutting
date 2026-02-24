@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>试卷识别 Demo - 阿里云读光 + GLM 优化</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        onload="window._katexAutoRenderReady = true;"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 试卷识别系统 Demo</h1>
+            <p class="subtitle">阿里云读光 OCR + GLM 智能优化</p>
+
+            <div class="controls">
+                <div class="upload-section">
+                    <input type="file" id="fileInput" accept="image/*,.pdf" />
+                    <button id="uploadBtn" class="btn btn-primary">
+                        <span class="icon">📤</span> 上传识别
+                    </button>
+                </div>
+
+                <div class="options-section">
+                    <select id="gradeLevel">
+                        <option value="default">默认</option>
+                        <option value="primary">小学</option>
+                        <option value="junior">初中</option>
+                        <option value="senior">高中</option>
+                    </select>
+
+                    <select id="subject">
+                        <option value="default">默认</option>
+                        <option value="math">数学</option>
+                        <option value="chinese">语文</option>
+                        <option value="english">英语</option>
+                    </select>
+
+                    <button id="optimizeBtn" class="btn btn-success" disabled>
+                        <span class="icon">🤖</span> GLM 优化
+                    </button>
+                </div>
+
+            </div>
+        </header>
+
+        <main class="split-view">
+            <div class="left-panel">
+                <div class="panel-header">
+                    <h2>📷 原始图片</h2>
+                    <span id="imageStatus" class="status">等待上传</span>
+                </div>
+                <div id="imageContainer" class="content-area">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">🖼️</div>
+                        <p>请上传试卷图片</p>
+                        <p class="hint">支持 JPG、PNG、PDF 格式</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="panel-header">
+                    <h2>📄 识别结果</h2>
+                    <div class="header-controls">
+                        <div class="tab-buttons">
+                            <button id="tabMarkdown" class="tab-btn active"
+                                onclick="switchTab('markdown')">识别内容</button>
+                            <button id="tabJSON" class="tab-btn" onclick="switchTab('json')">解析JSON</button>
+                            <button id="tabRawJSON" class="tab-btn" onclick="switchTab('raw_json')">原始JSON</button>
+                        </div>
+                        <span id="resultStatus" class="status">等待识别</span>
+                    </div>
+                </div>
+                <div id="resultContainer" class="content-area">
+                    <div class="placeholder">
+                        <div class="placeholder-icon">⏳</div>
+                        <p>等待识别结果...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div id="loading" class="loading hidden">
+            <div class="loading-content">
+                <div class="spinner"></div>
+                <p id="loadingText" class="loading-text">处理中...</p>
+                <p id="loadingHint" class="loading-hint"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>
